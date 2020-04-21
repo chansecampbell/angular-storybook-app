@@ -1,5 +1,6 @@
 // import { Button } from '@storybook/angular/demo';
 import { Button } from 'carbon-components-angular';
+import "carbon-components/css/carbon-components.min.css";
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import docs from './documentation.md';
 
@@ -13,11 +14,48 @@ export default {
 };
 
 export const Primary = () => ({
-  template: `<button type="button" disabled={{disabled}} style="height:48px;width:178px;background:red;color: white;text-align: left;font-size: 16px;border: none;">{{text}}</button>`,
-  props: {
-    text: text('text', 'Primary Button'),
-    disabled: boolean('disabled', false)
-  },
+    template: `
+        <div class="button__wrapper">
+            <button type="button" disabled={{disabled}} class="button__primary">
+                {{text}}
+                <span class="button__icon"></span>
+            </button>
+        </div>
+        `,
+    props: {
+      text: text('text', 'Primary Button'),
+      disabled: boolean('disabled', false)
+    },
+    styles: [`
+			.button__wrapper {
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .button__primary {
+                height: 48px;
+                width: auto;
+                background: #ba0ac1;
+                color: white;
+                text-align: left;
+                font-size: 14px;
+                border: none;
+                padding: 16px;
+                cursor: pointer;
+            }
+
+            .button__primary:hover {
+                background: #910297;
+            }
+
+            .button__icon {
+                display: inline-block;
+                width: 48px;
+            }
+		`],
 });
 
 Primary.story = {
@@ -29,11 +67,48 @@ Primary.story = {
 };
 
 export const Secondary = () => ({
-  template: `<button type="button" disabled={{disabled}} style="height:48px;width:178px;background:orange;color: white;text-align: left;font-size: 16px;border: none;">{{text}}</button>`,
-  props: {
+    template: `
+        <div class="button__wrapper">
+            <button type="button" disabled={{disabled}} class="button__secondary">
+                {{text}}
+                <span class="button__icon"></span>
+            </button>
+        </div>
+        `,
+    props: {
     text: text('text', 'Secondary Button'),
     disabled: boolean('disabled', false)
-  },
+    },
+    styles: [`
+			.button__wrapper {
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .button__secondary {
+                height: 48px;
+                width: auto;
+                background: #393939;
+                color: white;
+                text-align: left;
+                font-size: 14px;
+                border: none;
+                padding: 16px;
+                cursor: pointer;
+            }
+
+            .button__secondary:hover {
+                background: #6f6f6f;
+            }
+
+            .button__icon {
+                display: inline-block;
+                width: 48px;
+            }
+		`],
 });
 
 Secondary.story = {
