@@ -1,8 +1,8 @@
 import { Welcome } from '@storybook/angular/demo';
+import docs from './documentation.md';
 
 export default {
   title: 'Guidelines|Welcome',
-  component: Welcome,
 };
 
 export const ToStorybook = () => ({
@@ -12,4 +12,7 @@ export const ToStorybook = () => ({
 
 ToStorybook.story = {
   name: 'to Storybook',
+  parameters: {
+    notes: docs,
+  },
 };

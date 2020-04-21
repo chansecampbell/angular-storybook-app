@@ -8,7 +8,7 @@ export default {
   component: Button,
   decorators: [withKnobs],
   parameters: {
-    notes: 'some documentation here',
+    notes: docs,
   },
 };
 
@@ -22,9 +22,24 @@ export const Primary = () => ({
 
 Primary.story = {
   parameters: {
-    notes: docs,
     abstract: {
-      url: "https://share.goabstract.com/c3d9c8d2-9f4d-4f05-b765-fae184a55240",
+      url: "https://share.goabstract.com/99f9bd2e-73c6-4acb-a8f7-871d7a011f70",
+    }
+  },
+};
+
+export const Secondary = () => ({
+  template: `<button type="button" disabled={{disabled}} style="height:48px;width:178px;background:orange;color: white;text-align: left;font-size: 16px;border: none;">{{text}}</button>`,
+  props: {
+    text: text('text', 'Secondary Button'),
+    disabled: boolean('disabled', false)
+  },
+});
+
+Secondary.story = {
+  parameters: {
+    abstract: {
+      url: "https://share.goabstract.com/d590c662-b151-4902-a605-d1ae8f4a1049",
     }
   },
 };
