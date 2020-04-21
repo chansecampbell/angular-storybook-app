@@ -1,5 +1,5 @@
-import { Button } from '@storybook/angular/demo';
-import { action } from '@storybook/addon-actions';
+// import { Button } from '@storybook/angular/demo';
+import { Button } from 'carbon-components-angular';
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
 import docs from './documentation.md';
 

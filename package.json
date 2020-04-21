@@ -26,7 +26,7 @@
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "carbon-components": "^10.10.3",
-    "carbon-components-angular": "^3.49.5",
+    "carbon-components-angular": "^3.49.7",
     "rxjs": "~6.5.4",
     "storybook-addons-abstract": "^5.0.6",
     "tslib": "^1.10.0",

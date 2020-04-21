@@ -12,7 +12,4 @@ export const ToStorybook = () => ({
 
 ToStorybook.story = {
   name: 'to Storybook',
-  parameters: {
-    notes: docs,
-  },
 };
