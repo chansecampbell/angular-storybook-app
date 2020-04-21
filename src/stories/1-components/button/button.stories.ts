@@ -1,12 +1,15 @@
 import { Button } from '@storybook/angular/demo';
 import { action } from '@storybook/addon-actions';
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
-
+import docs from './documentation.md';
 
 export default {
-  title: 'Button',
+  title: 'Components|Button',
   component: Button,
-  decorators: [withKnobs]
+  decorators: [withKnobs],
+  parameters: {
+    notes: 'some documentation here',
+  },
 };
 
 export const Primary = () => ({
@@ -19,9 +22,9 @@ export const Primary = () => ({
 
 Primary.story = {
   parameters: {
-    notes: 'Primary Button',
+    notes: docs,
     abstract: {
-      url: "https://share.goabstract.com/9fabf10b-2eae-4a1d-adb1-6ef05e398130",
+      url: "https://share.goabstract.com/c3d9c8d2-9f4d-4f05-b765-fae184a55240",
     }
   },
 };

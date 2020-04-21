@@ -1,7 +1,7 @@
 import { Welcome } from '@storybook/angular/demo';
 
 export default {
-  title: 'Welcome',
+  title: 'Guidelines|Welcome',
   component: Welcome,
 };
 
