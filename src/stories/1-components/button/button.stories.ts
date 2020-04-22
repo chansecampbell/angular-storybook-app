@@ -2,6 +2,7 @@
 import { Button } from 'carbon-components-angular';
 import "carbon-components/css/carbon-components.min.css";
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import docs from './documentation.md';
 
 export default {
@@ -16,7 +17,7 @@ export default {
 export const Primary = () => ({
     template: `
         <div class="button__wrapper">
-            <button type="button" disabled={{disabled}} class="button__primary">
+            <button type="button" disabled={{disabled}} class="button__primary" (handleClick)="handleClick($event)">
                 {{text}}
                 <span class="button__icon"></span>
             </button>
@@ -24,7 +25,8 @@ export const Primary = () => ({
         `,
     props: {
       text: text('text', 'Primary Button'),
-      disabled: boolean('disabled', false)
+      disabled: boolean('disabled', false),
+      handleClick: action('Clicked')
     },
     styles: [`
 			.button__wrapper {

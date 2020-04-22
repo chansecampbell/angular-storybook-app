@@ -16,13 +16,11 @@ export default {
 export const SearchInput = () => ({
     template: `
         <div class="input__wrapper">
-          <div class="input__search">
-            <span>{{text}}</span>
-          </div>
+          <input class="input__search" placeholder={{placeholder}} />
         </div>
         `,
     props: {
-      text: text('text', 'Search for a bank')
+      placeholder: text('placeholder', 'What are you looking for today?'),
     },
     styles: [`
 			.input__wrapper {
@@ -38,7 +36,16 @@ export const SearchInput = () => ({
         width: 512px;
         background: #f4f4f4;
         padding: 16px;
+        border: none;
+        font-size: 14px;
       }
-
 		`],
 });
+
+SearchInput.story = {
+  parameters: {
+    abstract: {
+      url: "https://share.goabstract.com/876dc7ba-a032-4564-a683-6ba2d940c7e4",
+    }
+  },
+};
