@@ -1,10 +1,8 @@
-# Button
+# Colours
 
-The PSW design system mainly uses two kinds of buttons, Primary and Secondary.
-
-To view the full documentation or see sample implementations be sure to check out the official docs.
+Colours have been setup as tokens through the PSW design system components. If any changes to a components colours need to be changed, they should be done within the tokens in order for them to update everywhere.
 
 Useful links:
 ---
 
-[Button Documentation](https://www.carbondesignsystem.com/components/button/usage)
+[Colour Documentation](https://www.carbondesignsystem.com/guidelines/color/overview)

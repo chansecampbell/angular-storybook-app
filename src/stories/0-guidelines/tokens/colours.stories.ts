@@ -7,7 +7,7 @@ import colours from '../../../app/tokens/colours';
 import docs from './documentation.md';
 
 export default {
-  title: 'Components|Button',
+  title: 'Guidelines|Tokens',
   component: Button,
   decorators: [withKnobs],
   parameters: {
@@ -15,22 +15,55 @@ export default {
   },
 };
 
-export const Primary = () => ({
+export const Colours = () => ({
     template: `
-        <div class="button__wrapper">
-            <button type="button" [disabled]="disabled" class="button__primary" (handleClick)="handleClick($event)">
-                {{text}}
-                <span class="button__icon"></span>
-            </button>
+      <div class="colour__wrapper">
+        <div class="colour__inner-wrapper">
+          <div class="colour" style="background:${colours.interactive01};color:${colours.text04};">
+            <div>interactive01</div>
+            <div>${colours.interactive01}</div>
+          </div>
+          <div class="colour" style="background:${colours.interactive02};color:${colours.text04};">
+            <div>interactive02</div>
+            <div>${colours.interactive02}</div>
+          </div>
+          <div class="colour" style="background:${colours.hoverPrimary};color:${colours.text04};">
+            <div>hoverPrimary</div>
+            <div>${colours.hoverPrimary}</div>
+          </div>
+          <div class="colour" style="background:${colours.hoverSecondary};color:${colours.text04};">
+            <div>hoverSecondary</div>
+            <div>${colours.hoverSecondary}</div>
+          </div>
+          <div class="colour" style="background:${colours.activePrimary};color:${colours.text04};">
+            <div>activePrimary</div>
+            <div>${colours.activePrimary}</div>
+          </div>
+          <div class="colour" style="background:${colours.activeSecondary};color:${colours.text04};">
+            <div>activeSecondary</div>
+            <div>${colours.activeSecondary}</div>
+          </div>
+          <div class="colour" style="background:${colours.disabled02};color:${colours.text04};">
+            <div>disabled02</div>
+            <div>${colours.disabled02}</div>
+          </div>
+          <div class="colour" style="background:${colours.disabled03};color:${colours.text04};">
+            <div>disabled03</div>
+            <div>${colours.disabled03}</div>
+          </div>
+          <div class="colour" style="background:${colours.text04};color:${colours.interactive02}; border:1px solid ${colours.interactive02}">
+            <div>text04</div>
+            <div>${colours.text04}</div>
+          </div>
+          <div class="colour" style="background:${colours.focus};color:${colours.text04};">
+            <div>focus</div>
+            <div>${colours.focus}</div>
+          </div>
         </div>
-        `,
-    props: {
-      text: text('text', 'Primary Button'),
-      disabled: boolean('disabled', false),
-      handleClick: action('Clicked')
-    },
+      </div>
+      `,
     styles: [`
-			.button__wrapper {
+			.colour__wrapper {
         height: 100vh;
         width: 100%;
         display: flex;
@@ -38,106 +71,23 @@ export const Primary = () => ({
         align-items: center;
       }
 
-      .button__primary {
-        height: 48px;
-        width: auto;
-        background: ${colours.interactive01};
-        color: ${colours.text04};
-        text-align: left;
-        font-size: 14px;
-        border: none;
-        padding: 16px;
-        cursor: pointer;
-      }
-
-      .button__primary:hover {
-        background: ${colours.hoverPrimary};
-      }
-
-      .button__primary:disabled {
-        background: ${colours.disabled02};
-        color: ${colours.disabled03};
-        cursor: not-allowed;
-      }
-
-      .button__primary:focus {
-        outline: 2px solid ${colours.focus}
-      }
-
-      .button__icon {
-        display: inline-block;
-        width: 48px;
+      .colour {
+        height: 100px;
+        width: 100px;
+        display: inline-flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+        font-size: 12px;
       }
 		`],
 });
 
-Primary.story = {
+Colours.story = {
   parameters: {
     abstract: {
-      url: "https://share.goabstract.com/99f9bd2e-73c6-4acb-a8f7-871d7a011f70",
-    }
-  },
-};
-
-export const Secondary = () => ({
-    template: `
-        <div class="button__wrapper">
-            <button type="button" [disabled]="disabled" class="button__secondary">
-                {{text}}
-                <span class="button__icon"></span>
-            </button>
-        </div>
-        `,
-    props: {
-    text: text('text', 'Secondary Button'),
-    disabled: boolean('disabled', false)
-    },
-    styles: [`
-			.button__wrapper {
-                height: 100vh;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .button__secondary {
-                height: 48px;
-                width: auto;
-                background: ${colours.interactive02};
-                color: ${colours.text04};
-                text-align: left;
-                font-size: 14px;
-                border: none;
-                padding: 16px;
-                cursor: pointer;
-            }
-
-            .button__secondary:hover {
-              background: ${colours.hoverSecondary};
-            }
-
-            .button__secondary:disabled {
-              background: ${colours.disabled02};
-              color: ${colours.disabled03};
-              cursor: not-allowed;
-            }
-
-            .button__secondary:focus {
-              outline: 2px solid ${colours.focus}
-            }
-
-            .button__icon {
-                display: inline-block;
-                width: 48px;
-            }
-		`],
-});
-
-Secondary.story = {
-  parameters: {
-    abstract: {
-      url: "https://share.goabstract.com/d590c662-b151-4902-a605-d1ae8f4a1049",
+      url: "https://share.goabstract.com/0e32dacb-7b59-4dc1-b29c-3bb87b2db235",
     }
   },
 };
