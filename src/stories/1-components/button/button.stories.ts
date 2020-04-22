@@ -95,43 +95,43 @@ export const Secondary = () => ({
     },
     styles: [`
 			.button__wrapper {
-                height: 100vh;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-            .button__secondary {
-                height: 48px;
-                width: auto;
-                background: ${colours.interactive02};
-                color: ${colours.text04};
-                text-align: left;
-                font-size: 14px;
-                border: none;
-                padding: 16px;
-                cursor: pointer;
-            }
+      .button__secondary {
+        height: 48px;
+        width: auto;
+        background: ${colours.interactive02};
+        color: ${colours.text04};
+        text-align: left;
+        font-size: 14px;
+        border: none;
+        padding: 16px;
+        cursor: pointer;
+      }
 
-            .button__secondary:hover {
-              background: ${colours.hoverSecondary};
-            }
+      .button__secondary:hover {
+        background: ${colours.hoverSecondary};
+      }
 
-            .button__secondary:disabled {
-              background: ${colours.disabled02};
-              color: ${colours.disabled03};
-              cursor: not-allowed;
-            }
+      .button__secondary:disabled {
+        background: ${colours.disabled02};
+        color: ${colours.disabled03};
+        cursor: not-allowed;
+      }
 
-            .button__secondary:focus {
-              outline: 2px solid ${colours.focus}
-            }
+      .button__secondary:focus {
+        outline: 2px solid ${colours.focus}
+      }
 
-            .button__icon {
-                display: inline-block;
-                width: 48px;
-            }
+      .button__icon {
+        display: inline-block;
+        width: 48px;
+      }
 		`],
 });
 
