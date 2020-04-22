@@ -71,9 +71,13 @@ export const Colours = () => ({
         align-items: center;
       }
 
+      .colour__inner-wrapper {
+        text-align: center;
+      }
+
       .colour {
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
         display: inline-flex;
         justify-content: space-evenly;
         flex-direction: column;

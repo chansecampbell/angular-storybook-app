@@ -2,6 +2,7 @@
 import { Button } from 'carbon-components-angular';
 import "carbon-components/css/carbon-components.min.css";
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
 import colours from '../../../app/tokens/colours';
 import docs from './documentation.md';
@@ -9,7 +10,7 @@ import docs from './documentation.md';
 export default {
   title: 'Components|Button',
   component: Button,
-  decorators: [withKnobs],
+  decorators: [withKnobs, withA11y],
   parameters: {
     notes: docs,
   },
