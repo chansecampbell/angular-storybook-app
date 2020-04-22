@@ -3,6 +3,7 @@ import { Button } from "carbon-components-angular";
 
 @Component({
   selector: 'app-button',
+  templateUrl: './button.component.html',
   styleUrls: ['./button.component.css']
 })
 
