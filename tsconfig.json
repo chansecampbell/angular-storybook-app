@@ -16,6 +16,7 @@
       "dom"
     ]
   },
+  "enableIvy": false,
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
