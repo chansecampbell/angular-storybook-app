@@ -12,7 +12,7 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  text = 'Submit';
+  text = 'Search';
   buttonStyle = css`
     height: 48px;
     width: auto;
@@ -36,6 +36,11 @@ export class ButtonComponent implements OnInit {
 
     &:focus {
       outline: 2px solid ${colours.focus}
+    }
+
+    span {
+      display: inline-block;
+      width: 48px;
     }
   `
 }
