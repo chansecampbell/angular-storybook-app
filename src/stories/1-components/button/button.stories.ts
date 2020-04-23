@@ -20,7 +20,7 @@ export default {
 export const Primary = () => ({
     template: `
       <div class="button__wrapper">
-        <app-button [text]="text" [disabled]="disabled" (handleClick)="handleClick($event)"></app-button>
+        <app-button [text]="text" [disabled]="disabled" [buttonType]="primary" (handleClick)="handleClick($event)"></app-button>
       </div>
     `,
     props: {
@@ -50,14 +50,13 @@ Primary.story = {
 export const Secondary = () => ({
   template: `
     <div class="button__wrapper">
-      <app-button [text]="text" [disabled]="disabled" [buttonType]="buttonType" (handleClick)="handleClick($event)"></app-button>
+      <app-button [text]="text" [disabled]="disabled" [buttonType]="secondary" (handleClick)="handleClick($event)"></app-button>
     </div>
   `,
   props: {
     text: text('text', 'Secondary Button'),
     disabled: boolean('disabled', false),
     handleClick: action('Clicked!'),
-    buttonType: select("button type", ["primary", "secondary"], "secondary")
   },
   styles: [`
     .button__wrapper {
