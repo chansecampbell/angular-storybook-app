@@ -1,14 +1,11 @@
-// import { Button } from '@storybook/angular/demo';
-import { Button } from 'carbon-components-angular';
 import "carbon-components/css/carbon-components.min.css";
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { withKnobs } from '@storybook/addon-knobs';
 import colours from '../../../app/tokens/colours';
 import docs from './documentation.md';
 
 export default {
   title: 'Guidelines|Tokens',
-  component: Button,
+  component: 'foo',
   decorators: [withKnobs],
   parameters: {
     notes: docs,

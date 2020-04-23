@@ -1,9 +1,8 @@
 // import { Button } from '@storybook/angular/demo';
 import { moduleMetadata } from "@storybook/angular";
-import { boolean, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, text, withKnobs, select } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
-import colours from '../../../app/tokens/colours';
 import { ButtonModule } from '../../../app/components/button/button.module';
 import docs from './documentation.md';
 
@@ -21,13 +20,13 @@ export default {
 export const Primary = () => ({
     template: `
       <div class="button__wrapper">
-        <app-button></app-button>
+        <app-button [text]="text" [disabled]="disabled" (handleClick)="handleClick($event)"></app-button>
       </div>
     `,
     props: {
       text: text('text', 'Primary Button'),
       disabled: boolean('disabled', false),
-      handleClick: action('Clicked')
+      handleClick: action('Clicked!')
     },
     styles: [`
 			.button__wrapper {
@@ -49,58 +48,26 @@ Primary.story = {
 };
 
 export const Secondary = () => ({
-    template: `
-        <div class="button__wrapper">
-            <button type="button" [disabled]="disabled" class="button__secondary">
-                {{text}}
-                <span class="button__icon"></span>
-            </button>
-        </div>
-        `,
-    props: {
+  template: `
+    <div class="button__wrapper">
+      <app-button [text]="text" [disabled]="disabled" [buttonType]="buttonType" (handleClick)="handleClick($event)"></app-button>
+    </div>
+  `,
+  props: {
     text: text('text', 'Secondary Button'),
-    disabled: boolean('disabled', false)
-    },
-    styles: [`
-			.button__wrapper {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .button__secondary {
-        height: 48px;
-        width: auto;
-        background: ${colours.interactive02};
-        color: ${colours.text04};
-        text-align: left;
-        font-size: 14px;
-        border: none;
-        padding: 16px;
-        cursor: pointer;
-      }
-
-      .button__secondary:hover {
-        background: ${colours.hoverSecondary};
-      }
-
-      .button__secondary:disabled {
-        background: ${colours.disabled02};
-        color: ${colours.disabled03};
-        cursor: not-allowed;
-      }
-
-      .button__secondary:focus {
-        outline: 2px solid ${colours.focus}
-      }
-
-      .button__icon {
-        display: inline-block;
-        width: 48px;
-      }
-		`],
+    disabled: boolean('disabled', false),
+    handleClick: action('Clicked!'),
+    buttonType: select("button type", ["primary", "secondary"], "secondary")
+  },
+  styles: [`
+    .button__wrapper {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  `],
 });
 
 Secondary.story = {
