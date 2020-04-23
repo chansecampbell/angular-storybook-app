@@ -10,4 +10,6 @@ import { ButtonComponent } from "./button.component";
   providers: [],
   bootstrap: [ButtonComponent]
 })
-export class CustomButtonModule {}
+export class ButtonModule {}
+
+export { ButtonComponent };

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { css } from 'emotion';
-import colours from '../tokens/colours';
+import colours from '../../tokens/colours';
 
 @Component({
   selector: 'app-button',

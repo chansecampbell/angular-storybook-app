@@ -1,16 +1,18 @@
 // import { Button } from '@storybook/angular/demo';
-import { Button } from 'carbon-components-angular';
-import "carbon-components/css/carbon-components.min.css";
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
+import { moduleMetadata } from "@storybook/angular";
+import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
 import colours from '../../../app/tokens/colours';
+import { ButtonModule } from '../../../app/components/button/button.module';
 import docs from './documentation.md';
 
 export default {
   title: 'Components|Button',
-  component: Button,
-  decorators: [withKnobs, withA11y],
+  component: ButtonModule,
+  decorators: [withKnobs, withA11y, moduleMetadata({
+		imports: [ButtonModule]
+	})],
   parameters: {
     notes: docs,
   },
@@ -18,13 +20,10 @@ export default {
 
 export const Primary = () => ({
     template: `
-        <div class="button__wrapper">
-            <button type="button" [disabled]="disabled" class="button__primary" (handleClick)="handleClick($event)">
-                {{text}}
-                <span class="button__icon"></span>
-            </button>
-        </div>
-        `,
+      <div class="button__wrapper">
+        <app-button></app-button>
+      </div>
+    `,
     props: {
       text: text('text', 'Primary Button'),
       disabled: boolean('disabled', false),
@@ -37,37 +36,6 @@ export const Primary = () => ({
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-
-      .button__primary {
-        height: 48px;
-        width: auto;
-        background: ${colours.interactive01};
-        color: ${colours.text04};
-        text-align: left;
-        font-size: 14px;
-        border: none;
-        padding: 16px;
-        cursor: pointer;
-      }
-
-      .button__primary:hover {
-        background: ${colours.hoverPrimary};
-      }
-
-      .button__primary:disabled {
-        background: ${colours.disabled02};
-        color: ${colours.disabled03};
-        cursor: not-allowed;
-      }
-
-      .button__primary:focus {
-        outline: 2px solid ${colours.focus}
-      }
-
-      .button__icon {
-        display: inline-block;
-        width: 48px;
       }
 		`],
 });
