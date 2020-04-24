@@ -1,9 +1,9 @@
 export default {
-    interactive01: "#BA0AC1",
-    // interactive01: "#0abfc1", // alternative
+    // interactive01: "#BA0AC1",
+    interactive01: "#0abfc1", // alternative
     interactive02: "#393939",
-    hoverPrimary: "#910297",
-    // hoverPrimary: "#009b9c", // alternative
+    // hoverPrimary: "#910297",
+    hoverPrimary: "#009b9c", // alternative
     hoverSecondary: "#4C4C4C",
     activePrimary: "#E70EF0",
     activeSecondary: "#6F6F6F",

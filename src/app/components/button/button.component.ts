@@ -23,15 +23,8 @@ export class ButtonComponent implements OnInit {
 
   buttonStyle() {
     return css`
-      height: 48px;
-      width: auto;
       background: ${this.ibmButton == 'secondary' ? colours.interactive02 : colours.interactive01};
       color: ${colours.text04};
-      text-align: left;
-      font-size: 14px;
-      border: none;
-      padding: 16px 64px 16px 16px;
-      cursor: pointer;
 
       &:hover {
         background: ${this.ibmButton == 'secondary' ? colours.hoverSecondary : colours.hoverPrimary};
@@ -40,7 +33,6 @@ export class ButtonComponent implements OnInit {
       &:disabled {
         background: ${colours.disabled02};
         color: ${colours.disabled03};
-        cursor: not-allowed;
       }
 
       &:focus {

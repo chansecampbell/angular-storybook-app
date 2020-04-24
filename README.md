@@ -39,7 +39,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## To do
 
 - Currently the buttons primary and secondary styling is still being implemented.
-
-- The Search Input component needs moving from the story into the components folder.
-
-- Carbon Angular components are being imported but currently aren't being used.
