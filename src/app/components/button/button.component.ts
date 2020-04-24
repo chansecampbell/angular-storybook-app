@@ -11,25 +11,15 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  // @Input() buttonType = "primary";
+  @Input() buttonType = "primary";
   @Input() text = "Click Me";
   @Input() disabled = false;
   @Output() handleClick = new EventEmitter<string>();
-
-  @Input() set buttonType(value: "primary" | "secondary") {
-		this._buttonType = value;
-	}
-
-	get buttonType(): "primary" | "secondary" {
-		return this._buttonType;
-  }
   
-  protected _buttonType: "primary" | "secondary";
-
   buttonStyle = css`
     height: 48px;
     width: auto;
-    background: ${this._buttonType == 'secondary' ? colours.interactive02 : colours.interactive01};
+    background: ${this.buttonType == 'secondary' ? colours.interactive02 : colours.interactive01};
     color: ${colours.text04};
     text-align: left;
     font-size: 14px;
@@ -38,7 +28,7 @@ export class ButtonComponent implements OnInit {
     cursor: pointer;
 
     &:hover {
-      background: ${this._buttonType == 'secondary' ? colours.hoverSecondary : colours.hoverPrimary};
+      background: ${this.buttonType == 'secondary' ? colours.hoverSecondary : colours.hoverPrimary};
     }
 
     &:disabled {

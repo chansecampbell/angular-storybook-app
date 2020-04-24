@@ -47,32 +47,32 @@ Primary.story = {
   },
 };
 
-export const Secondary = () => ({
-  template: `
-    <div class="button__wrapper">
-      <app-button [text]="text" [disabled]="disabled" [buttonType]="secondary" (handleClick)="handleClick($event)"></app-button>
-    </div>
-  `,
-  props: {
-    text: text('text', 'Secondary Button'),
-    disabled: boolean('disabled', false),
-    handleClick: action('Clicked!'),
-  },
-  styles: [`
-    .button__wrapper {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  `],
-});
+// export const Secondary = () => ({
+//   template: `
+//     <div class="button__wrapper">
+//       <app-button [text]="text" [disabled]="disabled" [buttonType]="secondary" (handleClick)="handleClick($event)"></app-button>
+//     </div>
+//   `,
+//   props: {
+//     text: text('text', 'Secondary Button'),
+//     disabled: boolean('disabled', false),
+//     handleClick: action('Clicked!'),
+//   },
+//   styles: [`
+//     .button__wrapper {
+//       height: 100vh;
+//       width: 100%;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//     }
+//   `],
+// });
 
-Secondary.story = {
-  parameters: {
-    abstract: {
-      url: "https://share.goabstract.com/d590c662-b151-4902-a605-d1ae8f4a1049",
-    }
-  },
-};
+// Secondary.story = {
+//   parameters: {
+//     abstract: {
+//       url: "https://share.goabstract.com/d590c662-b151-4902-a605-d1ae8f4a1049",
+//     }
+//   },
+// };
