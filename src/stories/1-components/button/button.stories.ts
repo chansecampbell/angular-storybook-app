@@ -3,14 +3,15 @@ import { moduleMetadata } from "@storybook/angular";
 import { boolean, text, withKnobs, select } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
-import { ButtonModule } from '../../../app/components/button/button.module';
+
+import { CustomButtonModule } from '../../../app/components/button/button.module';
 import docs from './documentation.md';
 
 export default {
   title: 'Components|Button',
-  component: ButtonModule,
+  component: CustomButtonModule,
   decorators: [withKnobs, withA11y, moduleMetadata({
-		imports: [ButtonModule]
+		imports: [CustomButtonModule]
 	})],
   parameters: {
     notes: docs,
@@ -20,13 +21,14 @@ export default {
 export const Primary = () => ({
     template: `
       <div class="button__wrapper">
-        <app-button [text]="text" [disabled]="disabled" [buttonType]="primary" (handleClick)="handleClick($event)"></app-button>
+        <app-button [text]="text" [disabled]="disabled" [ibmButton]="ibmButton" (handleClick)="handleClick($event)"></app-button>
       </div>
     `,
     props: {
       text: text('text', 'Primary Button'),
-      disabled: boolean('disabled', false),
-      handleClick: action('Clicked!')
+      disabled: boolean('Disabled', false),
+      handleClick: action('Clicked!'),
+      ibmButton: select("Button type", ["Primary", "Secondary"], "Primary")
     },
     styles: [`
 			.button__wrapper {
