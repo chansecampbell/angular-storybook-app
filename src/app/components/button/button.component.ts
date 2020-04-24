@@ -10,37 +10,44 @@ import colours from '../../tokens/colours';
 export class ButtonComponent implements OnInit {
   ngOnInit(): void {
   }
+
+  ngOnChanges()	{
+    // This needs to be called when the values update in order to have the correct styles.
+    this.buttonStyle();
+  }
   
-  @Input() buttonType = "primary";
+  @Input() ibmButton = "primary";
   @Input() text = "Click Me";
   @Input() disabled = false;
   @Output() handleClick = new EventEmitter<string>();
-  
-  buttonStyle = css`
-    height: 48px;
-    width: auto;
-    background: ${this.buttonType == 'secondary' ? colours.interactive02 : colours.interactive01};
-    color: ${colours.text04};
-    text-align: left;
-    font-size: 14px;
-    border: none;
-    padding: 16px 64px 16px 16px;
-    cursor: pointer;
 
-    &:hover {
-      background: ${this.buttonType == 'secondary' ? colours.hoverSecondary : colours.hoverPrimary};
-    }
+  buttonStyle() {
+    return css`
+      height: 48px;
+      width: auto;
+      background: ${this.ibmButton == 'secondary' ? colours.interactive02 : colours.interactive01};
+      color: ${colours.text04};
+      text-align: left;
+      font-size: 14px;
+      border: none;
+      padding: 16px 64px 16px 16px;
+      cursor: pointer;
 
-    &:disabled {
-      background: ${colours.disabled02};
-      color: ${colours.disabled03};
-      cursor: not-allowed;
-    }
+      &:hover {
+        background: ${this.ibmButton == 'secondary' ? colours.hoverSecondary : colours.hoverPrimary};
+      }
 
-    &:focus {
-      outline: 2px solid ${colours.focus}
-    }
-  `
+      &:disabled {
+        background: ${colours.disabled02};
+        color: ${colours.disabled03};
+        cursor: not-allowed;
+      }
+
+      &:focus {
+        outline: 2px solid ${colours.focus}
+      }
+    `
+  }
 }
 
 

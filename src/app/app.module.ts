@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './components/button/button.component';
+import { CustomButtonModule } from './components/button/button.module';
+import { CustomSearchModule } from './components/search/search.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CustomButtonModule,
+    CustomSearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

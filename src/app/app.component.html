@@ -1,8 +1,11 @@
 <div class="page">
   <h1>Mock App</h1>
   <h4>Select the bank you would like to view</h4>
-  <input placeholder="Search for bank.." />
-  <app-button text="Search"></app-button>
+  <div class="search__wrapper">
+    <app-search placeholder="Search for something.."></app-search>
+    <app-button ibmButton="primary" text="Search"></app-button>
+  </div>
+  
   <div class="table__wrapper">
     <table>
       <tr>

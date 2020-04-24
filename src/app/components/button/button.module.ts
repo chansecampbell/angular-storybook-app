@@ -1,15 +1,16 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { ButtonModule } from 'carbon-components-angular';
 
 import { ButtonComponent } from "./button.component";
 
 @NgModule({
   declarations: [ButtonComponent],
   exports: [ButtonComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ButtonModule],
   providers: [],
   bootstrap: [ButtonComponent]
 })
-export class ButtonModule {}
+export class CustomButtonModule {}
 
 export { ButtonComponent };
